@@ -2,28 +2,38 @@
 int input()
 {
   int a;
-  printf ("enter the value of \n");
+  printf("enter the value of a\n");
   scanf("%d",&a);
-  return a ;
-
+  return a;
 }
-int add(int a,int b)
+int cmp(int a,int b,int c)
 {
-  int sum;
-  sum=a+b;
-  return sum;
+  int large;
+  if(a>b && a>c)
+  {
+    large=a;
+  }
+  else if(b>a && b>c)
+  {
+    large=b;
+  }
+  else
+  {
+    large=c;
+  }
+  return large;
 }
-
-int output(int a,int b,int sum)
+int output(int large)
 {
-  printf("Sum of a and b is %d+%d=%d\n",a,b,sum);
+  printf("large value %d\n",large);
 }
 int main()
 {
-  int a,b,sum;
+  int a,b,c,ans;
   a=input();
   b=input();
-  sum=add(a,b);
-  output(a,b,sum);
+  c=input();
+  ans=cmp(a,b,c);
+  output(ans);
   return 0;
 }

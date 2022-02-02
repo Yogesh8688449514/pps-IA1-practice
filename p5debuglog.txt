@@ -1,8 +1,7 @@
- gcc -g p5original.c
- ./a.out
-enter the value of a
-5 6 7 
-large value 7
+ gcc -g p8final.c;./a.out
+Enter a number
+25
+The square root of 25.000000 is 5.000000
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -20,21 +19,92 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x82c: file p5original.c, line 27.
+Breakpoint 1 at 0x869: file p8final.c, line 30.
 (gdb) r
-Starting program: /home/runner/pps-IA1-practice-1/a.out 
+Starting program: /home/runner/test4-Yogesh8688449514-50/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p5original.c:27
-27  {
+Breakpoint 1, main () at p8final.c:30
+30  a=input();
+(gdb) s
+input () at p8final.c:4
+4   {
 (gdb) n
-29    input(&a,&b,&c);
+6   printf("Enter a number\n");
 (gdb) n
-enter the value of a
-n
-30    cmp(a,b,c,&large);
+Enter a number
+7   scanf("%f", &n);
 (gdb) n
-31    output(large);
+25
+8   return n;
 (gdb) n
-large value 2111833696
-32    return 0;
+9   }
+(gdb) n
+main () at p8final.c:31
+31  sqt=calculate(a);
+(gdb) s
+calculate (n=25) at p8final.c:13
+13  sqt=n/2;
+(gdb) n
+14  temp=0;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+17  temp=sqt;
+(gdb) n
+18  sqt=(n/temp+temp)/2;
+(gdb) n
+15  while(sqt!=temp)
+(gdb) n
+20  return sqt;
+(gdb) n
+22  }
+(gdb) n
+main () at p8final.c:32
+32  output(a,sqt);
+(gdb) s
+output (n=25, sqt=5) at p8final.c:25
+25  printf("The square root of %f is %f\n", n, sqt);
+(gdb) n
+The square root of 25.000000 is 5.000000
+26  }
+(gdb) n
+main () at p8final.c:33
+33  return 0;
+(gdb) n
+34  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 231) exited normally]
+(gdb) quit
+ 

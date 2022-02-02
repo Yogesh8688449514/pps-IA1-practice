@@ -1,39 +1,46 @@
 #include<stdio.h>
-int input()
+int input_array_size()
 {
-  int a;
-  printf("enter the value of a\n");
-  scanf("%d",&a);
-  return a;
+    int n;
+    printf("enter the value of n");
+    scanf("%d",&n);
+    return n;
 }
-int cmp(int a,int b,int c)
+void input_array(int n,int a[n])
 {
-  int large;
-  if(a>b && a>c)
-  {
-    large=a;
-  }
-  else if(b>a && b>c)
-  {
-    large=b;
-  }
-  else
-  {
-    large=c;
-  }
-  return large;
+    
+    printf("enter array elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
 }
-int output(int large)
+int sum_n_array(int n , int a[n])
 {
-  printf("large value %d\n",large);
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+a[i];
+    }
+    return sum;
 }
+void output(int n,int a[n],int sum)
+{
+    for(int i=0;i<n;i++)
+    {
+    printf("%d+",a[i]);
+    }
+    printf("=%d",sum);
+        
+    }
+
 int main()
 {
-  int a,b,c,ans;
-  a=input();
-  b=input();
-  c=input();
-  ans=cmp(a,b,c);
-  output(ans);
-  return 0;
+    int n,sum;
+    n=input_array_size();
+    int a[n];
+    input_array(n,a);
+    sum=sum_n_array(n,a);
+    output(n,a,sum);
+    return 0;
 }

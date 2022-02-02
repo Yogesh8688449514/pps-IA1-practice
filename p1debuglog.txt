@@ -1,4 +1,9 @@
- gcc -g p1final.c
+gcc -g p0original.c;./a.out
+yogesh gcc -g p3final.c
+ ./a.out
+enter the value of a,b
+1 2
+sum of 1+2=3
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -15,23 +20,22 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
-(gdb) break main
-Breakpoint 1 at 0x772: file p1final.c, line 3.
+(gdb) b main
+Breakpoint 1 at 0x7fc: file p3final.c, line 16.
 (gdb) r
-Starting program: /home/runner/test4-Yogesh8688449514-6/a.out 
+Starting program: /home/runner/test4-Yogesh8688449514-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p1final.c:3
-3   {
+Breakpoint 1, main () at p3final.c:16
+16  {
 (gdb) n
-5     printf( "Enter values of a and b\n");
+18    input(&a,&b);
 (gdb) n
-Enter values of a and b
-6     scanf("%d%d", &a , &b);
-(gdb) n
+enter the value of a,b
 n
-7     c=a+b;
+19    add(a,b,&sum);
 (gdb) n
-8     printf("%d + %d = %d",a,b,c);
+20    output(a,b,sum);
 (gdb) n
-9     return 0;
+sum of 21922+-207831072=-207809150
+21    return 0;

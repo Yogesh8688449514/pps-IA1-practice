@@ -1,33 +1,34 @@
-#include<stdio.h>
-void input(int *a, int *b,int *c)
+#include <stdio.h>
+#include <stdio.h>
+float input()
 {
-  printf("enter the value\n");
-  scanf("%d %d %d",a,b,c);
+float n;
+printf("Enter a number\n");
+scanf("%f", &n);
+return n;
 }
-void cmp(int a,int b,int c,int *large)
+float calculate(float n)
 {
-   if(a>b && a>c)
-  {
-   *large=a;
-  }
-  else if(b>c && b>a)
- {
-   *large=b;
- } 
- else
- {
-   *large=c;
- }
+float temp, sqt;
+sqt=n/2;
+temp=0;
+while(sqt!=temp)
+{
+temp=sqt;
+sqt=(n/temp+temp)/2;
 }
-void output(int a,int b,int c,int large)
+return sqt;
+
+}
+void output(float n, float sqt)
 {
-  printf("large value %d",large);
+printf("The square root of %f is %f\n", n, sqt);
 }
 int main()
 {
-int a,b,c,large;
-input(&a,&b,&c);
-cmp(a,b,c,&large);
-output(a,b,c,large);
+float a, sqt;
+a=input();
+sqt=calculate(a);
+output(a,sqt);
 return 0;
 }

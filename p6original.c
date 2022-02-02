@@ -1,29 +1,43 @@
 #include<stdio.h>
-int input()
+#include<string.h>
+#include<stdlib.h>
+void input(char *str1,char *str2)
 {
-  int a;
-  printf("enter the number \n");
-  scanf("%d",&a);
-  return a;
+  printf("enter the first string:\n");
+  scanf("%s",str1);
+  printf("enter the second string:\n");
+  scanf("%s",str2);
+
 }
-int sum_(int n)
+int compute(char str1[20],char str2[20])
 {
-  int i,sum=0;
-  for(i=0;i<=n;i++)
+  int value;
+  value=strcmp(str1,str2);
+  return value;
+}
+void output(char str1[20],char str2[20],int value)
+{
+  if (value==0)
   {
-    sum=i+sum;
+    printf("strings are same\n");
   }
-  return sum;
-}
-void output(int n,int sum)
+  else if(value>0)
+  {
+    printf("%s is greater than %s\n",str1,str2);
+
+  }
+else
 {
-  printf("\nsum of %d numbers = %d",n,sum);
+  printf("%s is greater than %s\n",str2,str1);
+
+}
 }
 int main()
 {
-  int n,sum;
-  n=input();
-  sum=sum_(n);
-  output(n,sum);
+  char str1[20],str2[20];
+  int value;
+  input(str1,str2);
+  value=compute(str1,str2);
+  output(str1,str2,value);
   return 0;
 }

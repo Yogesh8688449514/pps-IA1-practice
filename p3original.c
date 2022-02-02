@@ -1,22 +1,29 @@
 #include<stdio.h>
-void input(int *a,int *b)
+int input()
 {
-  printf("enter the value of a,b\n");
-  scanf("%d %d",a,b);
+  int a;
+  printf("enter the number \n");
+  scanf("%d",&a);
+  return a;
 }
-void add(int a,int b,int *sum)
+int sum_(int n)
 {
- *sum=a+b;
+  int i,sum=0;
+  for(i=0;i<=n;i++)
+  {
+    sum=i+sum;
+  }
+  return sum;
 }
-void output(int a,int b,int sum)
+void output(int n,int sum)
 {
-  printf("sum of %d+%d=%d\n",a, b, sum);
+  printf("\nsum of %d numbers = %d",n,sum);
 }
 int main()
 {
-  int a,b,sum;
-  input(&a,&b);
-  add(a,b,&sum);
-  output(a,b,sum);
+  int n,sum;
+  n=input();
+  sum=sum_(n);
+  output(n,sum);
   return 0;
 }
