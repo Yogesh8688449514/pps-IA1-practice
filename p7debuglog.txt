@@ -1,0 +1,153 @@
+ gcc -g p7final.c;./a.out
+enter the value of n5
+enter array elements1 2 3 4 5 
+1+2+3+4+5+=15 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x892: file p7final.c, line 38.
+(gdb) r
+Starting program: /home/runner/test4-Yogesh8688449514-48/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7final.c:38
+38  {
+(gdb) n
+40      n=input_array_size();
+(gdb) s
+input_array_size () at p7final.c:3
+3   {
+(gdb) n
+5       printf("enter the value of n");
+(gdb) n
+6       scanf("%d",&n);
+(gdb) n
+enter the value of n5
+7       return n;
+(gdb) n
+8   }
+(gdb) print n
+$1 = 5
+(gdb) n
+main () at p7final.c:41
+41      int a[n];
+(gdb) n
+42      input_array(n,a);
+(gdb) s
+input_array (n=5, a=0x7ffdbfef0970) at p7final.c:12
+12      printf("enter array elements");
+(gdb) n
+13      for(int i=0;i<n;i++)
+(gdb) n
+15          scanf("%d",&a[i]);
+(gdb) n
+enter array elements15
+13      for(int i=0;i<n;i++)
+(gdb) n
+15          scanf("%d",&a[i]);
+(gdb) n
+14
+13      for(int i=0;i<n;i++)
+(gdb) n
+15          scanf("%d",&a[i]);
+(gdb) n
+13
+13      for(int i=0;i<n;i++)
+(gdb) n
+15          scanf("%d",&a[i]);
+(gdb) n
+12
+13      for(int i=0;i<n;i++)
+(gdb) n
+15          scanf("%d",&a[i]);
+(gdb) n
+11
+13      for(int i=0;i<n;i++)
+(gdb) n
+17  }
+(gdb) n
+main () at p7final.c:43
+43      sum=sum_n_array(n,a);
+(gdb) s
+sum_n_array (n=5, a=0x7ffdbfef0970) at p7final.c:20
+20      int sum=0;
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+23          sum=sum+a[i];
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+23          sum=sum+a[i];
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+23          sum=sum+a[i];
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+23          sum=sum+a[i];
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+23          sum=sum+a[i];
+(gdb) n
+21      for(int i=0;i<n;i++)
+(gdb) n
+25      return sum;
+(gdb) n
+26  }
+(gdb) print sum
+$2 = 65
+(gdb) n
+main () at p7final.c:44
+44      output(n,a,sum);
+(gdb) s
+output (n=5, a=0x7ffdbfef0970, sum=65) at p7final.c:29
+29      for(int i=0;i<n;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29      for(int i=0;i<n;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29      for(int i=0;i<n;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29      for(int i=0;i<n;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29      for(int i=0;i<n;i++)
+(gdb) n
+31      printf("%d+",a[i]);
+(gdb) n
+29      for(int i=0;i<n;i++)
+(gdb) n
+33      printf("=%d",sum);
+(gdb) n
+35      }
+(gdb) n
+main () at p7final.c:45
+45      return 0;
+(gdb) n
+46  }(gdb) c
+Continuing.
+15+14+13+12+11+=65[Inferior 1 (process 361) exited normally]
+(gdb) quit
